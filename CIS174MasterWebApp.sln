@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieListApplication", "Mov
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstResponsiveWebAppMcCloud", "..\..\..\Desktop\Homework\Advanced C#\for Debugger\FirstResponsiveWebAppMcCloud\FirstResponsiveWebAppMcCloud\FirstResponsiveWebAppMcCloud.csproj", "{CE6DC1E8-928B-4490-95FF-FC040EDACF3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomePageMcCloud", "..\..\..\source\repos\CIS174MasterWebApp\HomePageMcCloud\HomePageMcCloud.csproj", "{A2CA94BA-5F08-4E66-BFD7-5FE628BB41C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CE6DC1E8-928B-4490-95FF-FC040EDACF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE6DC1E8-928B-4490-95FF-FC040EDACF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE6DC1E8-928B-4490-95FF-FC040EDACF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CA94BA-5F08-4E66-BFD7-5FE628BB41C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CA94BA-5F08-4E66-BFD7-5FE628BB41C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CA94BA-5F08-4E66-BFD7-5FE628BB41C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CA94BA-5F08-4E66-BFD7-5FE628BB41C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

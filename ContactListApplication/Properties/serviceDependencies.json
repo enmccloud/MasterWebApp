@@ -3,6 +3,9 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "ContactListApp"
+    },
+    "secrets1": {
+      "type": "secrets"
     }
   }
 }

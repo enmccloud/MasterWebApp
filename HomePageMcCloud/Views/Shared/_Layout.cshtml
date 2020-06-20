@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Nikki's HomePage</title>
+    <h1>Nikki's HomePage</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+            .dropdown .dropbtn {
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Assignment Pages
+                <i class=" fa fa-caret-down"></i>
+            </button>
+            <div class=" dropdown-content">
+                <a href="https://cis174nmccloud.azurewebsites.net/ContactListApp">Contact List App</a>
+                <a href="https://cis174nmccloud.azurewebsites.net/MovieListApp">Movie List App</a>
+                <a href="http://cis174nmccloud.azurewebsites.net/2020AgeCalculator">2020 Age Calculator</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">
+                Routing Tests
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a asp-area="" asp-controller="Home" asp-action="DummyPage1">Dummy Site 1</a>
+                <a asp-area="" asp-controller="Home" asp-action="DummyPage2">Dummy Site 2</a>
+                <a asp-area="" asp-controller="Home" asp-action="DummyPage3">Dummy Site 3</a>
+            </div>
+        </div>
+        <a asp-area="Admin" asp-controller="Home" asp-action="AdminPage">Admin Access</a>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Nikki's Homepage</p>
+        </footer>
+    </div>
+</body>
+</html>
