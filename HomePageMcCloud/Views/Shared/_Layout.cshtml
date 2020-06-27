@@ -74,18 +74,8 @@
 <body>
 
     <div class="navbar">
+
         <a href="#home">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">
-                Assignment Pages
-                <i class=" fa fa-caret-down"></i>
-            </button>
-            <div class=" dropdown-content">
-                <a href="https://cis174nmccloud.azurewebsites.net/ContactListApp">Contact List App</a>
-                <a href="https://cis174nmccloud.azurewebsites.net/MovieListApp">Movie List App</a>
-                <a href="http://cis174nmccloud.azurewebsites.net/2020AgeCalculator">2020 Age Calculator</a>
-            </div>
-        </div>
 
         <div class="dropdown">
             <button class="dropbtn">
@@ -98,8 +88,24 @@
                 <a asp-area="" asp-controller="Home" asp-action="DummyPage3">Dummy Site 3</a>
             </div>
         </div>
+
         <a asp-area="Admin" asp-controller="Home" asp-action="AdminPage">Admin Access</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">
+                Assignment Pages
+                <i class=" fa fa-caret-down"></i>
+            </button>
+            <div class=" dropdown-content">
+                <a href="https://cis174nmccloud.azurewebsites.net/ContactListApp">Contact List App</a>
+                <a href="https://cis174nmccloud.azurewebsites.net/MovieListApp">Movie List App</a>
+                <a href="http://cis174nmccloud.azurewebsites.net/2020AgeCalculator">2020 Age Calculator</a>
+                <a asp-area="" asp-controller="Student" asp-action="Index">Assignment 6.1</a>
+            </div>
+        </div>
+
     </div>
+
 
 
     <div class="container body-content">
