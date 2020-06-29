@@ -10,11 +10,11 @@ namespace ContactListApplication.Controllers
 {
     public class ContactList : Controller
     {
-        private ContactContext context { get; set; }
+        private ContactContext Context { get; set; }
 
         public ContactList(ContactContext ctx)
         {
-            context = ctx;
+            Context = ctx;
         }
 
         [HttpGet]
@@ -28,7 +28,7 @@ namespace ContactListApplication.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
-            var contact = context.Contacts.Find(id);
+            var contact = Context.Contacts.Find(id);
             return View(contact);
         }
 
@@ -38,10 +38,10 @@ namespace ContactListApplication.Controllers
             if (ModelState.IsValid)
             {
                 if (contact.ContactId == 0)
-                    context.Contacts.Add(contact);
+                    Context.Contacts.Add(contact);
                 else
-                    context.Contacts.Update(contact);
-                context.SaveChanges();
+                    Context.Contacts.Update(contact);
+                Context.SaveChanges();
                 return RedirectToAction("Index", "Home");
 
             }
@@ -54,14 +54,14 @@ namespace ContactListApplication.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var contact = context.Contacts.Find(id);
+            var contact = Context.Contacts.Find(id);
             return View(contact);
         }
         [HttpPost]
         public IActionResult Delete(ContactInfo contact)
         {
-            context.Contacts.Remove(contact);
-            context.SaveChanges();
+            Context.Contacts.Remove(contact);
+            Context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
     }

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OlyCountry>
+
+@{ ViewData["Title"] = "2020 Olympic Events";
+
+
+    string Active(string filter, string selected)
+    {
+        return (filter.ToLower() == selected.ToLower()) ? "active" : "";
+    } 
+    
+ }
+
+<div class="row">
+    <div class="col-sm-3">
+
+        <h3 class="mt-3">Olympic Event</h3>
+        <div class="list-group">
+            @foreach (OlyGame olyGame in ViewBag.OlyGames)
+            {
+<a asp-action="Index" asp-route-activeOlyGame="@olyGame.OlyGameID" asp-route-activeOlyCat="@ViewBag.ActiveOlyCat"
+   class="list-group-item @Active(olyGame.OlyGameID, ViewBag.ActiveOlyGame)"> @olyGame.OlyGameName</a>}
+        </div>
+
+        <h3 class="mt-3">Olympic Category</h3>
+        <div class="list-group">
+            @foreach (OlyCat olyCat in ViewBag.OlyCats)
+            {
+<a asp-action="Index" asp-route-activeOlyGame="@ViewBag.ActiveOlyGame" asp-route-activeOlyCat="@olyCat.OlyCatID"
+   class="list-group-item @Active(olyCat.OlyCatID, ViewBag.ActiveOlyCat)"> @olyCat.OlyCatName</a>}
+        </div>
+
+        <h3 class="mt-3">Olympic Sport</h3>
+        <div class="list-group">
+            @foreach (OlySport olySport in ViewBag.OlySports)
+            {
+                <a asp-action="Index" asp-route-activeOlySport="@olySport.OlySportID" asp-route-activeOlyCat="@ViewBag.ActiveOlyCat"
+                 class="list-group-item @Active(olySport.OlySportID, ViewBag.ActiveOlySport)"> @olySport.OlySportName</a>}
+        </div>
+
+    </div>
+    <div class="col-sm-9">
+        <ul class="list-inline">
+            @foreach (OlyCountry olyCountry in Model)
+            {
+
+<li class="list-inline-item">
+    <img src="~/images/@olyCountry.OlyCountryFlag" alt="@olyCountry.OlyCountryName" title="@olyCountry.OlyCountryName || @olyCountry.OlyGame.OlyGameName || @olyCountry.OlySport.OlySportName" />
+</li>
+            }
+
+        </ul>
+    </div>
+</div>
