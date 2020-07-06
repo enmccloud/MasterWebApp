@@ -1,5 +1,3 @@
-using System;
-
 namespace OlympicProgram.Models
 {
     public class ErrorViewModel

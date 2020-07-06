@@ -13,12 +13,6 @@
 * Academic Honesty: I attest that this is my original work.
 * I have not used unauthorized source code, either modified or * * unmodified. I have not given other fellow student(s) access to * my program.         
 ***************************************************************/
-using System;
-using Microsoft.AspNetCore.SignalR;
-using System.Security.Cryptography.X509Certificates;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

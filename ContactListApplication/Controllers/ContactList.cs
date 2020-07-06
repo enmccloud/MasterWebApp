@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ContactListApplication.Models;
 using Microsoft.AspNetCore.Mvc;
-using ContactListApplication.Models;
 
 
 namespace ContactListApplication.Controllers

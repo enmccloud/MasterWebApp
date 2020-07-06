@@ -1,0 +1,29 @@
+﻿@model List<OlyCountry>
+@{ 
+}
+
+    <div class="container text-center mt-5">
+        <form asp-controller="Favorite" asp-action="Favorite" method="post">
+            <div class="row mt-5">
+                <a style="border-bottom-right-radius: 0!important; border-top-right-radius: 0!important"
+                   class="col-sm btn btn-primary m-2 rounded"
+                   asp-controller="Home" asp-action="Index">Home</a>
+                <button type="submit"
+                        style="border-bottom-left-radius: 0!important; border-top-left-radius: 0!important"
+                        class="col-sm btn btn-primary m-2 rounded">
+                    Clear Favorites
+                </button>
+            </div>
+        </form>
+        @foreach (OlyCountry olyCountry in Model)
+        {
+    <div class="row bg-light p-2 m-2 rounded text-center">
+        <div class="col-md-4"><img src="~/images/@olyCountry.OlyCountryFlag" /></div>
+        <div class="col-md"><h3 class="form-text m-5 mb-0">@olyCountry.OlyCountryName</h3></div>
+        <div class="col-md"><h3 class="form-text m-5 mb-0">@olyCountry.OlyGame.OlyGameName</h3></div>
+        <div class="col-md"><h3 class="form-text m-5 mb-0">@olyCountry.OlySport.OlySportName: @olyCountry.OlyCat.OlyCatName</h3></div>
+        <div class="pull-right" id="options">
+        </div>
+    </div>
+        }
+    </div>

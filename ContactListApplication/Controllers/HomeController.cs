@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ContactListApplication.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using ContactListApplication.Models;
-using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ContactListApplication.Controllers
 {

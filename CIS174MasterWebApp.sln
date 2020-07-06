@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstResponsiveWebAppMcClou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomePageMcCloud", "..\..\..\source\repos\CIS174MasterWebApp\HomePageMcCloud\HomePageMcCloud.csproj", "{A2CA94BA-5F08-4E66-BFD7-5FE628BB41C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympicProgram", "..\..\..\source\repos\CIS174MasterWebApp\OlympicProgram\OlympicProgram.csproj", "{619D8B96-0ECB-45C0-993C-B558E0D4BFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlympicProgram", "..\..\..\source\repos\CIS174MasterWebApp\OlympicProgram\OlympicProgram.csproj", "{619D8B96-0ECB-45C0-993C-B558E0D4BFAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlympicProgram1", "OlympicProgram\OlympicProgram1.csproj", "{8B4B74C1-01EB-4B19-A12A-87B41264846D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileTicketSystem", "..\..\..\source\repos\CIS174MasterWebApp\AgileTicketSystem\AgileTicketSystem.csproj", "{C1132FE9-56D0-4322-A072-150F090201B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketingSystem", "..\..\..\Desktop\New folder\Ch04MovieList-master\TicketingSystem\TicketingSystem\TicketingSystem.csproj", "{2E7F62F4-9804-4435-917D-EB438D69E038}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{619D8B96-0ECB-45C0-993C-B558E0D4BFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619D8B96-0ECB-45C0-993C-B558E0D4BFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619D8B96-0ECB-45C0-993C-B558E0D4BFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B4B74C1-01EB-4B19-A12A-87B41264846D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B4B74C1-01EB-4B19-A12A-87B41264846D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B4B74C1-01EB-4B19-A12A-87B41264846D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4B74C1-01EB-4B19-A12A-87B41264846D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1132FE9-56D0-4322-A072-150F090201B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1132FE9-56D0-4322-A072-150F090201B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1132FE9-56D0-4322-A072-150F090201B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1132FE9-56D0-4322-A072-150F090201B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7F62F4-9804-4435-917D-EB438D69E038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7F62F4-9804-4435-917D-EB438D69E038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7F62F4-9804-4435-917D-EB438D69E038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7F62F4-9804-4435-917D-EB438D69E038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

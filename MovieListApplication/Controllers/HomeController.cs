@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using MovieListApplication.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MovieListApplication.Models;
+using System.Linq;
 
 namespace MovieListApplication.Controllers
 {
     public class HomeController : Controller
     {
 
-        private MovieContext Context{ get; set; }
+        private MovieContext Context { get; set; }
 
         public HomeController(MovieContext ctx)
         {

@@ -34,7 +34,18 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Favorite">Favorite</a></li>
                 </ul>
+                <div>
+                    @if (ViewBag.Favorite != null)
+                    {
+                        <div style="margin-left: 15rem; margin-right: 0rem" class="bg-info text-center mt-5 p-1 rounded">
+                            <a asp-controller="Favorite" asp-action="Favorite">
+                                <h4 class="form-text text-light font-weight-bold">Favorites</h4>
+                            </a>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </nav>

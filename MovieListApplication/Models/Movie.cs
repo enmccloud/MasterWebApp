@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 
 namespace MovieListApplication.Models

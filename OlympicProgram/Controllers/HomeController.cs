@@ -12,13 +12,16 @@
 * I have not used unauthorized source code, either modified or * * unmodified. I have not given other fellow student(s) access to * my program.         
 ***************************************************************/
 
-using System;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using OlympicProgram.Models;
+using OlympicProgram1.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using OlympicProgram.Models;
+
+
 
 namespace OlympicProgram.Controllers
 {
@@ -35,6 +38,10 @@ namespace OlympicProgram.Controllers
         // list form for user view and interaction.
         public ViewResult Index(string activeOlyCat = "all", string activeOlyGame = "all", string activeOlySport = "all")
         {
+
+            Favorite favorite = new Favorite(HttpContext.Session);
+            ViewBag.Favorite = favorite.AddFavorite();
+
             ViewBag.ActiveOlyCat = activeOlyCat;
             ViewBag.ActiveOlyGame = activeOlyGame;
             ViewBag.ActiveOlySport = activeOlySport;
@@ -53,11 +60,11 @@ namespace OlympicProgram.Controllers
 
             // Iquerable for showing countries associated w/ chosen item.
             IQueryable<OlyCountry> query = Context.OlyCountries;
-            
+
             if (activeOlyGame != "all")
                 query = query.Where(
                     t => t.OlyGame.OlyGameID.ToLower() == activeOlyGame.ToLower());
-           
+
             if (activeOlyCat != "all")
                 query = query.Where(
                     t => t.OlyCat.OlyCatID.ToLower() == activeOlyCat.ToLower());
@@ -69,7 +76,53 @@ namespace OlympicProgram.Controllers
             var olyCountries = query.ToList();
             return View(olyCountries);
         }
+        [HttpGet]
+        public IActionResult OnDetail(string name)
+        {
+            Favorite favorite = new Favorite(HttpContext.Session);
 
+            OlyCountry olyCountry = Context.OlyCountries.Include(t => t.OlySport).Include(t => t.OlyCat).Include(t => t.OlyGame).SingleOrDefault(t => t.OlyCountryName.ToLower() == name.ToLower());
+
+            Detail model = new Detail()
+            {
+                OlyCountry = olyCountry,
+                Favorite = favorite.FavoriteValid(olyCountry),
+                FavoriteList = favorite.AddFavorite()
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult OnDetail(Detail model)
+        {
+            Favorite favorite = new Favorite(HttpContext.Session);
+
+            List<OlyCountry> Favorite = favorite.AddFavorite();
+
+            OlyCountry olyCountry = Context.OlyCountries.Include(t => t.OlySport).Include(t => t.OlyCat).Include(t => t.OlyGame).FirstOrDefault(t => t.OlyCountryID == model.OlyCountry.OlyCountryID);
+
+            if (Favorite != null)
+            {
+                if (Favorite.Find(t => t.OlyCountryID == model.OlyCountry.OlyCountryID) == null)
+                {
+                    Favorite.Add(olyCountry);
+                    favorite.SaveFavorite(Favorite);
+                }
+            }
+            else
+            {
+                Favorite = new List<OlyCountry>();
+                Favorite.Add(olyCountry);
+                favorite.SaveFavorite(Favorite);
+            }
+
+            RouteValueDictionary favoriteValue = new RouteValueDictionary()
+                {
+                    {"name", olyCountry.OlyCountryName }
+                };
+
+            return RedirectToAction("OnDetail", "Home", favoriteValue);
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

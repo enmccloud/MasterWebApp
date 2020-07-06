@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace OlympicProgram.Models
+﻿namespace OlympicProgram.Models
 {
     // Properties for my Olympic Country including references to other classes.
     public class OlyCountry

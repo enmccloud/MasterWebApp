@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using OlympicProgram1.Models;
 
 namespace OlympicProgram.Models
 {
@@ -19,6 +16,8 @@ namespace OlympicProgram.Models
         public DbSet<OlyGame> OlyGames { get; set; }
 
         public DbSet<OlySport> OlySports { get; set; }
+
+        public DbSet<Favorite> Favorites { get; set; }
 
         // Referencing my SQL Server
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -360,8 +359,8 @@ namespace OlympicProgram.Models
                     OlyGameID = "P",
                     OlySportID = "CS",
                     OlyCatID = "O"
-                }
-                );
+                });
+
         }
     }
 }
