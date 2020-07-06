@@ -1,0 +1,47 @@
+﻿@model TicketView
+
+<h2>New Ticket</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Add" method="post">
+  
+    <div class="form-group">
+        <label asp-for="CurrentTask.AgileTicketName">Name:</label>
+        <input type="text" asp-for="CurrentTask.AgileTicketName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentTask.AgileTicketDesc">Description:</label>
+        <input type="text" asp-for="CurrentTask.AgileTicketDesc" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentTask.PointValue">Point Value:</label>
+        <input type="text" asp-for="CurrentTask.PointValue" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentTask.AgileSprintID">Sprint:</label>
+        <select asp-for="CurrentTask.AgileSprintID" class="form-control"
+                asp-items="@(new SelectList(Model.Sprints, "AgileSprintID", "AgileSprintName"))">
+            <option value=""></option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentTask.Deadline">Deadline:</label>
+        <input type="text" asp-for="CurrentTask.Deadline" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentTask.AgileStatusID">Status:</label>
+        <select asp-for="CurrentTask.AgileStatusID" class="form-control"
+                asp-items="@(new SelectList(Model.Statuses, "AgileStatusID", "AgileStatusName"))">
+            <option value=""></option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
