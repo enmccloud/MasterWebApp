@@ -7,7 +7,10 @@
 <form asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="CurrentTask.TicketName">Ticket Name:</label>
+        <input asp-for="CurrentTask.TicketName" my-required />
         <input type="text" asp-for="CurrentTask.TicketName" class="form-control" />
+        <input my-required type ="text" id="TicketName" name="TicketName" value="" class="form-control"/>
+        <span class="text-danger mr-2">*</span>
     </div>
 
     <div class="form-group">
